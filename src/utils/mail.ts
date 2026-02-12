@@ -53,12 +53,12 @@ export const sendVerificationMail = async (token: string, profile: Profile) => {
     attachments: [
       {
         filename: "logo.png",
-        path: path.join(__dirname, "../mail/logo.png"),
+        path: path.join(__dirname, "../mail/images/logo.png"),
         cid: "logo",
       },
       {
         filename: "welcome.png",
-        path: path.join(__dirname, "../mail/welcome.png"),
+        path: path.join(__dirname, "../mail/images/welcome.png"),
         cid: "welcome",
       },
     ],
@@ -106,7 +106,7 @@ export const sendForgetPasswordLink = async (options: Options) => {
 
 export const sendPasswordResetSuccessEmail = async (
   name: string,
-  email: string
+  email: string,
 ) => {
   const transport = generateMailTransporter();
 
