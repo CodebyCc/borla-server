@@ -1,4 +1,6 @@
 import nodemailer from "nodemailer";
+
+import { MailtrapClient } from "mailtrap";
 import path from "path";
 
 import MobileUser from "#/models/MobileUser";
@@ -138,3 +140,29 @@ export const sendPasswordResetSuccessEmail = async (
     ],
   });
 };
+
+const TOKEN = "fcff67ea58e87e0790bdf325c52a4539";
+
+const client = new MailtrapClient({
+  token: TOKEN,
+});
+
+const sender = {
+  email: "hello@boorlaman.com",
+  name: "Mailtrap Test",
+};
+const recipients = [
+  {
+    email: "ciici6440@gmail.com",
+  },
+];
+
+client
+  .send({
+    from: sender,
+    to: recipients,
+    subject: "You are awesome!",
+    text: "Congrats for sending test email with Mailtrap!",
+    category: "Integration Test",
+  })
+  .then(console.log, console.error);

@@ -17,6 +17,7 @@
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
+    "mailtrap": "^4.4.0",
     "mongoose": "^8.19.1",
     "nodemailer": "^7.0.10",
     "yup": "^1.7.1"
@@ -26,7 +27,7 @@
     "@types/express": "^5.0.3",
     "@types/mongoose": "^5.11.96",
     "@types/node": "^24.7.0",
-    "@types/nodemailer": "^7.0.3",
+    "@types/nodemailer": "^6.4.22",
     "ts-node-dev": "^2.0.0",
     "tsc-alias": "^1.8.16",
     "tsconfig-paths": "^4.2.0",
