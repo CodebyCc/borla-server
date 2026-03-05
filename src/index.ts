@@ -26,12 +26,22 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("*", (req, res) => {
-  res.status(404).json({
-    error: "Not Found",
-  });
-});
+// app.get("*", (req, res) => {
+//   res.status(404).json({
+//     error: "Not Found",
+//   });
+// });
 
+app.use((req, res) => {
+  res.status(404).json({ message: "Route not found" });
+});
 app.listen(PORT, () => {
   console.log(`Port is listening on  ${PORT} right Now`);
+});
+
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: "Route not found",
+  });
 });
