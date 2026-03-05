@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(
   express.urlencoded({
     extended: false,
-  })
+  }),
 );
 app.use(express.static("src/public"));
 app.use("/auth", authRouter);
@@ -19,6 +19,18 @@ app.use("/products", productRouter);
 app.use("/orders", ordersRouter);
 
 const PORT = process.env.PORT || 8989;
+
+app.get("/", (req, res) => {
+  res.json({
+    alive: true,
+  });
+});
+
+app.get("*", (req, res) => {
+  res.status(404).json({
+    error: "Not Found",
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`Port is listening on  ${PORT} right Now`);
